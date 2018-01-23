@@ -4774,6 +4774,25 @@ label monika_write:
     m "...That's my advice for today!"
     m "Thanks for listening~"
     return
+    
+    init 5 python:
+    #This is a list of keywords for this topic
+    for key in ['Jamil']:
+        monika_topics.setdefault(key,[])
+        monika_topics[key].append('monika_jamil') #id
+    monika_random_topics.append('monika_jamil')
+
+label monika_jamil:
+    m 1c "[player], Is Jamil talking to you again?"
+    m 1m "Well your exams are up"
+    m "Jamil, I dont mean to be rude but could you give [player] some time to review?"
+    m "I'm grateful that you're his friend but I'm really concerned about him"
+    m 1q "I really want him to succeed in life"
+    m "He told me all about you since 2nd grade"
+    m 1r "You should review too you know?"
+    m "Anyway you're on Facebook so just close that and review"
+    m 1h "Just some advice Jamil, as Shaker's girlfriend"
+    return
 
 init 5 python:
     for key in ['self harm' , 'cutting' , 'self-harm']:
